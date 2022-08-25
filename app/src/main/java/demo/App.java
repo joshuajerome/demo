@@ -4,11 +4,15 @@
 package demo;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    public String getGreeting(String[] args) {
+        StringBuilder sb = new StringBuilder();
+        for(String arg : args) {
+            sb.append(arg + "\n");
+        }
+        return "Hello World!" + sb.toString();
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        System.out.println(new App().getGreeting(args));
     }
 }
